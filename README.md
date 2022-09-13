@@ -6,6 +6,6 @@ Requirements:
 
 ### Steps To Run
 
-- `git clone https://github.com/ikechukwukalu/realestateintel-exercise-backend`
+- `git clone https://github.com/ikechukwukalu/realestateintel-exercise-frontend`
 - `npm install`
 - `npm start`
