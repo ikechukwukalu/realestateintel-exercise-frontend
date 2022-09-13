@@ -78,12 +78,4 @@ const mapStateToProps = (state) => ({
   api_url: state.globals.api_url,
 });
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setGlobals: () => {
-//       dispatch(setGlobals());
-//     },
-//   };
-// };
-
 export default connect(mapStateToProps)(Login);
