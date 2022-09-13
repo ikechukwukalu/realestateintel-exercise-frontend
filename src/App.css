@@ -1,57 +1,112 @@
-.App {
-  text-align: center;
+.shape-oval {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background: inherit;
+  border-radius: 100px / 50px;
+  margin: 6px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.shape-rectangle {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background: inherit;
+  margin: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shape-square {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: inherit;
+  margin: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shape-circle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: inherit;
+  border-radius: 50%;
+  margin: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.shape-parallelogram {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  transform: skew(20deg);
+  background: inherit;
+  margin: 6px;
 }
 
-.hd, .ft {
-  background-color: #eee;
+.shape-triangle-danger {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #dc3545;
+  margin: 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shape-triangle-primary {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #0d6efd;
+  margin: 6px;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.shape-triangle-success {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #198754;
+  margin: 6px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.shape-triangle-warning {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #ffc107;
+  margin: 6px;
 }
 
+.shape-triangle-info {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #0dcaf0;
+  margin: 6px;
+}
+
+.shape-triangle-secondary {
+  background: transparent !important;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #6c757d;
+  margin: 6px;
+}
+
+.bg-active {
+  background-color: rgba(127, 255, 212, 0.496);
+}

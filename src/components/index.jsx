@@ -1,25 +1,35 @@
 import React, { Component, Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import NoMatch from "./helpers/no-match.js";
 
 import Header from "./includes/header.jsx";
-import Footer from "./includes/footer.jsx";
 
 import Home from "./pages/home.jsx";
-import Blank from "./pages/blank.jsx";
+import Login from "./pages/login.jsx";
 
 class Components extends Component {
+  loggedIn = () => {
+    if (localStorage.getItem('credentials')) {
+      return true
+    }
+
+    return false;
+  }
+
   render() {
     return (
       <Fragment>
-        <Header />
-        <Switch>
-          <Route exact path="/" render={(props) => <Home />} />
-          <Route exact path="/blank" render={(props) => <Blank />} />
-          <Route render={(props) => <NoMatch />} />
-        </Switch>
-        <Footer />
+      <Route path="/" render={(props) => this.loggedIn() ? <Header {...props} /> : <Header />} />
+        <main className="py-4">
+          <div className="container">
+            <Switch>
+              <Route exact path="/" render={(props) => this.loggedIn() ? <Redirect to="/home" /> : <Login {...props} />} />
+              <Route exact path="/home" render={(props) => this.loggedIn() ? <Home {...props} /> : <Redirect to="/" />} />
+              <Route render={(props) => <NoMatch />} />
+            </Switch>
+          </div>
+        </main>
       </Fragment>
     );
   }

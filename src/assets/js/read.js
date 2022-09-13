@@ -2,8 +2,8 @@ var fs = require("fs");
 var os = require("os");
 
 var externalJavascriptFiles = [
-    'plugins/sample-1.js',
-    'plugins/sample-2.js'
+    // 'plugins/sample-1.js',
+    // 'plugins/sample-2.js'
 ]
 
 console.log(externalJavascriptFiles.length + " number of file(s).");
@@ -26,7 +26,7 @@ externalJavascriptFiles.map((element, index) => {
 });
 
 var externalJavascriptUrls = [
-    'https://code.jquery.com/jquery-3.4.1.min.js'
+    // 'https://code.jquery.com/jquery-3.4.1.min.js'
 ]
 
 console.log(externalJavascriptUrls.length + " number of Url(s).");

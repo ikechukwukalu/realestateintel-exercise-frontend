@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
 import './App.css';
 import Components from './components/index.jsx';
 import ScrollToTop from './components/helpers/scroll.js';
