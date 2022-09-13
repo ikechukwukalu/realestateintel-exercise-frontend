@@ -145,7 +145,7 @@ class Home extends Component {
           </div>);
   }
 
-  filterCards () {
+  filterCards() {
     let cardFilter = document.getElementById('cards-filter');
     let cardFilterHTML = [];
 
@@ -183,6 +183,23 @@ class Home extends Component {
     )
   }
 
+  describeItems() {
+    let describeItems = "";
+
+    if (this.state.shape === 'all'
+      && this.state.color === 'all') {
+        describeItems = 'Multiple';
+    } else if (this.state.shape === 'all' ) {
+      describeItems = `Multiple ${this.state.color}`;
+    } else if (this.state.color === 'all' ) {
+      describeItems = `Multiple ${this.state.shape}`;
+    } else {
+      describeItems = `All ${this.state.shape} ${this.state.color}`;
+    }
+
+    return describeItems;
+  }
+
   shapeOnClick = (e) => {
       let currentShape = this.state.shape;
 
@@ -193,10 +210,11 @@ class Home extends Component {
       currentShape = e.target.getAttribute('data-id').split('-');
       this.setState({shape: currentShape[0]}, () => {
         this.filterCards();
+        let describeItems = this.describeItems();
 
         ReactDOM.render(
-          capitalizeFirstLetter(currentShape[0]),
-          document.getElementById('shape-name'),
+          capitalizeFirstLetter(describeItems),
+          document.getElementById('describe-items'),
         );
       });
   }
@@ -208,7 +226,15 @@ class Home extends Component {
       e.target.classList.add('bg-active');
 
       currentColor = e.target.getAttribute('data-id').split('-');
-      this.setState({color: currentColor[0]}, () => this.filterCards());
+      this.setState({color: currentColor[0]}, () => {
+        this.filterCards();
+        let describeItems = this.describeItems();
+
+        ReactDOM.render(
+          capitalizeFirstLetter(describeItems),
+          document.getElementById('describe-items'),
+        );
+      });
   }
 
   render() {
@@ -234,7 +260,7 @@ class Home extends Component {
           </div>
         </section>
         <section>
-          <h5 className="mb-2"><span id="shape-name">All</span> Item(s):</h5>
+          <h5 className="mb-2"><span id="describe-items">All Danger</span> Item(s):</h5>
           <div id="cards-filter" className="row">
           </div>
         </section>
